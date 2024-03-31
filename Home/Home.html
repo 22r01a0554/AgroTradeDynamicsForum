@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organic Farming App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+        integrity="sha512-10/jx2PCFv+IRWuUJCx8vFfvHcrevBJmkrtdK5v8Zrt61QeyM29grOMJLz9FhAxli+49gZ6BtN0arta7sXjWNA=="
+        crossorigin="anonymous" />
+</head>
+<body style="background-image: url('/img/bgimage.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; animation: background-move 10s linear infinite;">
+<header>
+    <div class="logo-container">
+        <img src="/img/logo.jpg" alt="Logo">
+    </div>
+    <div class="signup-container">
+        <a href="/Signup/signup.html"><img src="/img/user.jpeg" alt="Sign Up"></a>
+    </div>
+</header>
+<div class="text-container">
+    <h1 id="animated-text">AGRO TRADE DYNAMICS FORUM</h1>
+</div>
+ <div class="content-container carousel">
+    <a href="#" class="image-wrapper">
+        <img src="/img/CF1.jpeg" alt="Image 5">
+    </a>
+    <!-- <a href="#" class="image-wrapper">
+        <img src="/img/home2.avif" alt="Image 5">
+    </a> -->
+    <a href="#" class="image-wrapper">
+        <img src="/img/a.jpeg" alt="Image 3">
+    </a>
+    
+    <a href="#" class="image-wrapper">
+        <img src="/img/home3.jpeg" alt="Image 4">
+    </a>
+    <a href="#" class="image-wrapper">
+        <img src="/img/a5.png" alt="Image 5">
+    </a>
+    <!-- <a href="#" class="image-wrapper">
+        <img src="/img/home4.png" alt="Image 3">
+    </a>  -->
+    <a href="#" class="image-wrapper">
+        <img src="/img/cf4.avif" alt="Image 3">
+    </a>
+</div> 
+<div class="carousel-nav">
+
+    <i class="prev fas fa-chevron-left"></i>
+    <i class="next fas fa-chevron-right"></i>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const carouselNav = document.querySelector('.carousel-nav');
+        const imageWrappers = document.querySelectorAll('.image-wrapper');
+        let currentImageWrapper = 0;
+
+        function updateActiveImageWrapper(index) {
+            imageWrappers.forEach(function(wrapper) {
+                wrapper.classList.remove('active');
+            });
+            imageWrappers[index].classList.add('active');
+        }
+
+        carouselNav.querySelector('.prev').addEventListener('click', function() {
+            currentImageWrapper === 0 ? currentImageWrapper = imageWrappers.length - 1 : currentImageWrapper--;
+            updateActiveImageWrapper(currentImageWrapper);
+        });
+
+        carouselNav.querySelector('.next').addEventListener('click', function() {
+            currentImageWrapper === imageWrappers.length - 1 ? currentImageWrapper = 0 : currentImageWrapper++;
+            updateActiveImageWrapper(currentImageWrapper);
+        });
+
+        // Automatic carousel navigation (optional)
+        let carouselInterval = setInterval(function() {
+            currentImageWrapper === imageWrappers.length - 1 ? currentImageWrapper = 0 : currentImageWrapper++;
+            updateActiveImageWrapper(currentImageWrapper);
+        }, 3000); // Adjust the interval time in milliseconds
+    });
+
+</script>
+
+<style>
+    .text-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        opacity: 0;
+        animation: appear-text 1s ease-in forwards;
+    }
+
+    #animated-text {
+        font-size: 48px;
+        font-weight: bold;
+        color: #fff;
+        white-space: nowrap;
+        margin: 0;
+        position: relative;
+        overflow: hidden;
+        animation: text-glow 0.8s ease-in-out infinite;
+    }
+
+    @keyframes appear-text {
+        from {
+            opacity: 0;
+            transform: translateY(-50%);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(50);
+        }
+    }
+    body, h1, h2, h3, h4, h5, h6, p, ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Add CSS for the header */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        background-color: #f1efec;
+        z-index: 999;
+    }
+    
+    .logo-container img,
+    .signup-container img {
+        max-width: 85px;
+    }
+
+    /* Add CSS for the background image */
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif; /* Default font family */
+        color: #333; /* Default text color */
+    }
+    .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Adjust the height as needed */
+      }
+      
+      .image {
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+      }
+      
+      .image:first-child {
+        opacity: 1;
+      }
+
+    
+    .image-wrapper img {
+        height: 200px; /* Adjust the height as per your preference */
+        width: auto;
+    }
+
+    /* Add CSS for the carousel navigation */
+    .carousel-nav {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .prev,
+    .next {
+        font-size: 2rem; /* Adjust the size */
+        margin: 0 10px;
+    }
+
+    .content-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%; /* Set a fixed width */
+        margin-top: 250px; /* Add some margin to separate from header */
+    }
+
+    .image-wrapper:hover {
+        transform: translateY(-10px); /* Add hover effect */
+    }
+
+    .image-wrapper.active {
+        transform: translateY(10px);
+    }
+    .image-wrapper {
+        display: inline-block;
+        width: 45%; /* Adjust the width as per your preference */
+        margin: 10px 1%;
+        vertical-align: top;
+        text-align: center;
+        overflow: hidden;
+        transition: transform 0.3s ease; /* Add smooth transition */
+    }
+
+   
+</style>
+</body> 
+
+</html>
