@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/2bbac3a66c.js" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $('#form').submit(()=>{
+                event.preventDefault();
+                var firstname=$("#firstname").val();
+                var lastname=$("#lastname").val();
+                var username=$("username").val();
+                var mobilenumber=$("#MobileNumber").val();
+                var email=$("#email").val();
+                var password=$("#password").val();
+                //Here i am giving /signup with post for generation of token by m aking a service call to /signup
+                $.ajax({
+                    url:"/signup",
+                    type:"POST", 
+                    contentType:"application/json",
+                    dataType:"json",
+                    data:JSON.stringify({
+                        firstname:firstname,
+                        lastname:lastname,
+                        username:username,
+                        mobilenumber:mobilenumber,
+                        email:email,
+                        password:password
+                    }),
+                    success:function(data){
+                        var tokenData=data;
+                        if(tokenData.signup==false){
+                            $("#msg").html('<h6>You are already existing user!!!Please do login with the below link<h6><br><a id="loginlink" href="\login">Login</a>');
+                        }
+                        else{
+                            $("#msg").html('<h6>Hurray!Successfully registered!!!</h6><br>Now you can login with the below link<br><a id="login-link" href="\login">Login</a>');
+                            $("login-link").show();
+                        }
+                    },
+                    error:function(data){
+                        console.log("Something went wrong");
+                        $("msg").html('<h6>Sorry! can you please check your details again</h6>');
+                    }
+
+                });
+            });
+
+        });
+    </script>
+</head>
+<style>
+    .fi1 {
+        text-align: center;
+        background-color: white;
+        border: 2px solid rgb(114, 215, 111);
+        padding: 20px 60px 20px 40px;
+        text-transform: uppercase;
+
+        button::before {
+            height: 700px;
+        }
+
+        button::after {
+            height: 720px;
+        }
+
+    }
+
+    /*.button:hover{
+        border:2px solid #ff96ad;
+        color: #ff96ad;
+        background-color: #17181c;
+    }*/
+    .button:hover {
+        box-shadow: 10px 10px 0px #ff96ad;
+        top: 5px;
+        left: -5px;
+    }
+
+    button {
+        position: relative;
+        border: none;
+        transition: .4s ease-in;
+        z-index: 1;
+        width: 100px;
+        height: 40px;
+    }
+    button::before,
+    button::after {
+        position: absolute;
+        content: " ";
+        z-index: -1;
+    }
+    .fi{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .fi label {
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+
+    .fi input {
+        width: 100%;
+        padding: 10px;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .fi1 .fas.fa-check-circle {
+        visibility: visible;
+        color: green;
+    }
+
+    .fi1 .fas.fa-exclamation-circle{
+        visibility: visible;
+        color: red;
+    }
+
+    .e_first,
+    .e_last,
+    .e_user,
+    .e_mobile,
+    .e_email,
+    .e_pass,
+    .e_con_pass {
+        visibility: visible;
+        color: red;
+    }
+
+    .s_user,.s_mobile,
+    .s_email,
+    .s_pass,
+    .s_con_pass {
+        visibility: visible;
+        color: green;
+    }
+</style>
+<script>
+    function clearlocalstorage()
+    {
+        localStorage.clear();
+    }
+</script>
+<body onload="clearlocalstorage()">
+    <div class="fi1">
+        <h2 class="si">Sign Up</h2>
+        <form action="/Login/login.html" id="form">
+            <div class="fi">
+                <label for="firstname">FirstName</label>
+                <input type="text" placeholder="Ex:Lavanya" name="firstname" id="firstname">
+                <i class="fas fa-exclamation-circle error" style="visibility: hidden;"></i>
+                <i class="fas fa-check-circle success" style="visibility: hidden;"></i>
+                <div class="e_first"></div>
+            </div>
+            <div class="fi">
+                <label for="Lastname">Lastname</label>
+                <input type="text" placeholder="Ex:Selli" name="lastname" id="lastname">
+                <i class="fas fa-exclamation-circle error" style="visibility: hidden;"></i>
+                <i class="fas fa-check-circle success" style="visibility: hidden;"></i>
+                <div class="e_last"></div>
+            </div>
+            <div class="fi">
+                <label for="username">Username</label>
+                <input type="text" placeholder="Ex:Lavanya@5809" name="username" id="username">
+                <i class="fas fa-exclamation-circle error" style="visibility: hidden;"></i>
+                <i class="fas fa-check-circle success" style="visibility: hidden;"></i>
+                <div class="e_user"></div>
+                <div class="s_user"></div>
+
+            </div>
+            <div class="fi">
+                <label for="number">Mobile Number</label>
+                <input type="number" placeholder="Enter Mobile Number" name="Mobile Number" id="MobileNumber">
+                <i class="fas fa-exclamation-circle error" style="visibility: hidden;"></i>
+                <i class="fas fa-check-circle success" style="visibility: hidden;"></i>
+                <div class="e_mobile"></div>
+                <div class="s_mobile"></div>
+            </div>
+            <div class="fi">
+                <label for="email">Email</label>
+                <input type="email" placeholder="Ex:lavanya@gmail.com" name="email" id="email">
+                <i class="fas fa-exclamation-circle error" style="visibility: hidden;"></i>
+                <i class="fas fa-check-circle success" style="visibility: hidden;"></i>
+                <div class="e_email"></div>
+                <div class="s_email"></div>
+            </div>
+            <div class="fi">
+                <label for="password">Password</label>
+                <input type="password" placeholder="Password" name="password" id="password">
+                <i class="fas fa-exclamation-circle error" style="visibility: hidden;"></i>
+                <i class="fas fa-check-circle success" style="visibility: hidden;"></i>
+                <div class="e_pass"></div>
+                <div class="s_pass"></div>
+            </div>
+            <div class="fi">
+                <label for="confirmpassword">Confirm Password</label>
+                <input type="password" placeholder="Password" name="confirmpassword" id="confirmpassword">
+                <i class="fas fa-exclamation-circle error" style="visibility: hidden;"></i>
+                <i class="fas fa-check-circle success" style="visibility: hidden;"></i>
+                <div class="e_con_pass"></div>
+                <div class="s_con_pass"></div>
+            </div>
+            <br>
+            <button class="button" type="submit">SIGN UP</button>
+        </form>
+    </div>
+    <div id="msg"></div>
+    <script src="signup.js"></script>
+</body>
+
+</html>
