@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="signup_style.css"> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#form').submit(function(event) {
+                event.preventDefault();
+                var firstname = $("#firstname").val();
+                var lastname = $("#lastname").val();
+                var name = $("#username").val();
+                var mobilenumber = $("#mobilenumber").val();
+                var email = $("#email").val();
+                var password = $("#password").val();
+                var confirmpassword=$("#confirmpassword").val();
+                
+                var validationResult = validatesignupform(firstname,lastname,name,mobilenumber,email,password,confirmpassword);
+               // var validationResult = window.signup.validatesignupform();
+                console.log(validationResult);
+                if (validationResult) {
+                    $.ajax({
+                        url: "/register",
+                        type: "POST", 
+                        contentType: "application/json",
+                        dataType: "json",
+                        data: JSON.stringify({
+                            firstname: firstname,
+                            lastname: lastname,
+                            name: name,
+                            mobilenumber: mobilenumber,
+                            email: email,
+                            password: password
+                        }),
+                        success: function(data) {
+                            var tokenData = data;
+                            if (tokenData.signup == false) {
+                                $("#msg").html('<h6>You are already an existing user!!! Please log in with the below link</h6><br><a id="loginlink" href="\login">Login</a>');
+                            } else {
+                                $("#msg").html('<h6>Hurray! Successfully registered!!!</h6><br>Now you can log in with the below link<br><a id="login-link" href="\login">Login</a>');
+                                $("#login-link").show();
+                            }
+                        },
+                        error: function(data) {
+                            console.log("Something went wrong");
+                            $("#msg").html('<h6>Sorry! Can you please check your details again</h6>');
+                        }
+                    });
+                } else {
+                    // Display validation errors.
+                    $("#msg").html(validationResult.error);
+                }
+            });
+
+       
+        });
+        function validatesignupform(firstname, lastname, name, mobilenumber, email, password, confirmpassword) {
+            // Reset all error and success messages
+            $(".e_first, .e_last, .e_user, .e_mobile, .e_email, .e_pass, .e_con_pass").text("");
+            $(".s_user, .s_mobile, .s_email, .s_pass").text("");
+            $(".fi1 .fas.fa-exclamation-circle").css("visibility", "hidden");
+            $(".fi1 .fas.fa-check-circle").css("visibility", "hidden");
+        
+            let isValid = true;
+        
+            if (!firstname) {
+                $(".e_first").text("PLEASE ENTER YOUR FIRST NAME");
+                isValid = false;
+            }
+            if (!lastname) {
+                $(".e_last").text("PLEASE ENTER YOUR LAST NAME");
+                isValid = false;
+            }
+            if (!name) {
+                $(".e_user").text("PLEASE ENTER YOUR USERNAME");
+                isValid = false;
+            } else if (name.length < 6 || name.length > 20) {
+                $(".e_user").text("USERNAME MUST BE BETWEEN 6 TO 20 CHARACTERS");
+                isValid = false;
+            } else {
+                $(".s_user").text("VALID USERNAME");
+            }
+            if (!mobilenumber) {
+                $(".e_mobile").text("PLEASE ENTER YOUR MOBILE NUMBER");
+                isValid = false;
+            } else if (mobilenumber.length !== 10) {
+                $(".e_mobile").text("INVALID MOBILE NUMBER (Must be 10 digits)");
+                isValid = false;
+            } else {
+                $(".s_mobile").text("VALID MOBILE NUMBER");
+            }
+            if (!email) {
+                $(".e_email").text("PLEASE ENTER YOUR EMAIL");
+                isValid = false;
+            } else if (!email.includes("@")) {
+                $(".e_email").text("PLEASE ENTER A VALID EMAIL");
+                isValid = false;
+            } else {
+                $(".s_email").text("VALID EMAIL");
+            }
+            if (!password) {
+                $(".e_pass").text("PLEASE ENTER PASSWORD");
+                isValid = false;
+            } else if (password.length < 8) {
+                $(".e_pass").text("PASSWORD MUST BE AT LEAST 8 CHARACTERS");
+                isValid = false;
+            } else if (!/[A-Z]/.test(password)) {
+                $(".e_pass").text("PASSWORD MUST CONTAIN AT LEAST ONE UPPERCASE LETTER");
+                isValid = false;
+            } else if (!/[a-z]/.test(password)) {
+                $(".e_pass").text("PASSWORD MUST CONTAIN AT LEAST ONE LOWERCASE LETTER");
+                isValid = false;
+            } else if (!/\d/.test(password)) {
+                $(".e_pass").text("PASSWORD MUST CONTAIN AT LEAST ONE NUMBER");
+                isValid = false;
+            } else if (!/[!@#$%^&*]/.test(password)) {
+                $(".e_pass").text("PASSWORD MUST CONTAIN AT LEAST ONE SPECIAL CHARACTER");
+                isValid = false;
+            } else {
+                $(".s_pass").text("STRONG PASSWORD");
+            }
+            if (!confirmpassword) {
+                $(".e_con_pass").text("PLEASE ENTER YOUR PASSWORD AGAIN");
+                isValid = false;
+            } else if (confirmpassword.trim() !== password.trim()) {
+                $(".e_con_pass").text("PASSWORDS DO NOT MATCH");
+                isValid = false;
+            }
+             // If all fields are valid, show success message
+    if (isValid) {
+        $(".fi1 .fas.fa-check-circle").css("visibility", "visible");
+    }
+
+    return isValid;
+}
+    
+    </script>
+</head>
+<body >
+    <div class="fi1">
+        <h2 class="si">Sign Up</h2>
+        <form  id="form">
+            <div class="fi">
+                <label for="firstname">FirstName</label>
+                <input type="text" placeholder="Ex:Lavanya" name="firstname" id="firstname">
+                <i class="fas fa-exclamation-circle error" style="visibility: hidden;"></i>
+                <i class="fas fa-check-circle success" style="visibility: hidden;"></i>
+                <div class="e_first"></div>
+            </div>
+            <div class="fi">
+                <label for="Lastname">Lastname</label>
+                <input type="text" placeholder="Ex:Selli" name="lastname" id="lastname">
+                <i class="fas fa-exclamation-circle error" style="visibility: hidden;"></i>
+                <i class="fas fa-check-circle success" style="visibility: hidden;"></i>
+                <div class="e_last"></div>
+            </div>
+            <div class="fi">
+                <label for="username">Username</label>
+                <input type="text" placeholder="Ex:Lavanya@5809" name="username" id="username">
+                <i class="fas fa-exclamation-circle error" style="visibility: hidden;"></i>
+                <i class="fas fa-check-circle success" style="visibility: hidden;"></i>
+                <div class="e_user"></div>
+                <div class="s_user"></div>
+
+            </div>
+            <div class="fi">
+                <label for="number">Mobile Number</label>
+                <input type="number" placeholder="Enter Mobile Number" name="Mobile Number" id="mobilenumber">
+                <i class="fas fa-exclamation-circle error" style="visibility: hidden;"></i>
+                <i class="fas fa-check-circle success" style="visibility: hidden;"></i>
+                <div class="e_mobile"></div>
+                <div class="s_mobile"></div>
+            </div>
+            <div class="fi">
+                <label for="email">Email</label>
+                <input type="email" placeholder="Ex:lavanya@gmail.com" name="email" id="email">
+                <i class="fas fa-exclamation-circle error" style="visibility: hidden;"></i>
+                <i class="fas fa-check-circle success" style="visibility: hidden;"></i>
+                <div class="e_email"></div>
+                <div class="s_email"></div>
+            </div>
+            <div class="fi">
+                <label for="password">Password</label>
+                <input type="password" placeholder="Password" name="password" id="password">
+                <i class="fas fa-exclamation-circle error" style="visibility: hidden;"></i>
+                <i class="fas fa-check-circle success" style="visibility: hidden;"></i>
+                <div class="e_pass"></div>
+                <div class="s_pass"></div>
+            </div>
+            <div class="fi">
+                <label for="confirmpassword">Confirm Password</label>
+                <input type="password" placeholder="Password" name="confirmpassword" id="confirmpassword">
+                <i class="fas fa-exclamation-circle error" style="visibility: hidden;"></i>
+                <i class="fas fa-check-circle success" style="visibility: hidden;"></i>
+                <div class="e_con_pass"></div>
+                <div class="s_con_pass"></div>
+            </div>
+            <br>
+            <button class="button" type="submit">SIGN UP</button>
+        </form>
+    </div>
+    <div id="msg"></div>
+    
+</body>
+<style>
+    .fi1 {
+        text-align: center;
+        background-color: white;
+        border: 2px solid rgb(114, 215, 111);
+        padding: 20px 60px 20px 40px;
+        text-transform: uppercase;
+    
+        button::before {
+            height: 700px;
+        }
+    
+        button::after {
+            height: 720px;
+        }
+    
+    }
+    
+    /*.button:hover{
+        border:2px solid #ff96ad;
+        color: #ff96ad;
+        background-color: #17181c;
+    }*/
+    .button:hover {
+        box-shadow: 10px 10px 0px #ff96ad;
+        top: 5px;
+        left: -5px;
+    }
+    
+    button {
+        position: relative;
+        border: none;
+        transition: .4s ease-in;
+        z-index: 1;
+        width: 100px;
+        height: 40px;
+    }
+    button::before,
+    button::after {
+        position: absolute;
+        content: " ";
+        z-index: -1;
+    }
+    .fi{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .fi label {
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+    
+    .fi input {
+        width: 100%;
+        padding: 10px;
+    }
+    
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+    }
+    
+    .fi1 .fas.fa-check-circle {
+        visibility: visible;
+        color: green;
+    }
+    
+    .fi1 .fas.fa-exclamation-circle{
+        visibility: visible;
+        color: red;
+    }
+    
+    .e_first,
+    .e_last,
+    .e_user,
+    .e_mobile,
+    .e_email,
+    .e_pass,
+    .e_con_pass {
+        visibility: visible;
+        color: red;
+    }
+    
+    .s_user,.s_mobile,
+    .s_email,
+    .s_pass,
+    .s_con_pass {
+        visibility: visible;
+        color: green;
+    }
+    
+</style>
+</html>
