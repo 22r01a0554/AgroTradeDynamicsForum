@@ -1,0 +1,37 @@
+carousel {
+    .carousel {
+        background-color: #F0EDEB;
+        height: 100vh; /* Ensures the carousel takes up the full viewport height */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw; /* Ensures the carousel takes up the full viewport width */
+        overflow: auto; /* Allows scrolling if the content exceeds the viewport size */
+    }
+  }
+  
+  .wrap {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 350px;
+    margin-top:70px;
+    justify-content: stretch;
+    animation: slide 15s linear infinite;
+  }
+  
+  .wrap img {
+    width: 300px;
+    height: 300px;
+    border-radius: 15px;
+    object-fit: cover;
+  }
+  
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-4 * 250px));
+    }
+  }
+  
