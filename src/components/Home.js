@@ -3,7 +3,6 @@ import Navbar from './Navbar';
 import { useNavigate } from 'react-router-dom';
 import Carousel from './Carousel';
 import { useState } from 'react';
-
 const Home = () => {
   let navigate=useNavigate();
   const buyClick =  (e) => {
@@ -37,6 +36,9 @@ const Home = () => {
     e.preventDefault();    
     navigate("/agriculturetools")
   }
+
+
+  
   return (
     <>
     <Navbar/>
@@ -50,7 +52,7 @@ const Home = () => {
     <button type="button" className="btn btn-outline-warning" style={{marginRight: '20px',height:'80px',width:'200px' }} onClick={villagegoodsClick}><i className="fa-solid fa-message"></i>VillageGoods</button>
     <button type="button" className="btn btn-outline-info" style={{ marginRight: '20px',height:'80px',width:'200px' }} onClick={agriculturetoolsClick}>AgricultureProducts And Tools</button>
     <button type="button" className="btn btn-outline-info" style={{ marginRight: '20px',height:'80px',width:'200px' }}>Info</button>
-    <button type="button" className="btn btn-outline-dark" style={{ marginRight: '20px',height:'80px',width:'200px' }}><i className="fa-solid fa-user"></i>Agri Product Sellers</button>
+    <button type="button" className="btn btn-outline-dark" style={{ marginRight: '20px', height: '80px', width: '200px' }} ><i className="fa-solid fa-user"></i> Agri Product Sellers</button>
     <button type="button" className="btn btn-outline-dark" style={{ marginRight: '20px',height:'80px',width:'200px' ,marginTop:'20px'}} onClick={communityClick}><i className="fa-solid fa-people-group"></i>Community Groups</button>
     <button type="button" className="btn btn-outline-dark" style={{ marginRight: '20px',height:'80px',width:'200px' ,marginTop:'20px'}} onClick={productsClick}><i className="fa-solid fa-people-group"></i>Your Products</button>
     </div>

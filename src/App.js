@@ -31,6 +31,7 @@ import WhatsAppLinks from './components/WhatsappLinks';
 import AiRentals from './components/AiRentals';
 import VillageGoods from './components/VillageGoods';
 import AgricultureTools from './components/AgricultureTools';
+
 function App() {
   
   const [alert, setAlert] = useState(null)
@@ -79,6 +80,7 @@ function App() {
         <Route exact path="/villagegoods" element={<VillageGoods/>} />
         <Route exact path="/agriculturetools" element={<AgricultureTools/>} />
         <Route exact path="/whatsapplinks" element={<WhatsAppLinks/>} /> 
+        
         </Routes>
       </Router>
     </PostState>
