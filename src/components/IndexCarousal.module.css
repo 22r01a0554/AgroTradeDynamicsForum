@@ -1,0 +1,35 @@
+
+  .carousel {
+    width: 100%;
+    height: 100%; /* Ensure the carousel takes up the full height of its container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Prevent scrolling */
+    
+  }
+  
+  .wrap {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 350px;
+    justify-content: stretch;
+    animation: slide 15s linear infinite;
+  }
+  
+  .wrap img {
+    width: 300px; /* Adjust image width */
+    height: 300px; /* Adjust image height */
+    border-radius: 15px;
+    object-fit: cover;
+  }
+  
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-4 * 250px));
+    }
+  }
+  

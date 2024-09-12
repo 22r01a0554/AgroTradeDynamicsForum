@@ -1,0 +1,107 @@
+/* IndexCarousal.module.css */
+.agroSellerContainer {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
+  }
+  
+  .agroSellerContent {
+    animation: fadeInUp 0.8s ease-out;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .highlightText {
+    color: #4CAF50;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .contentText {
+    color: #666;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .btn {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #45a049;
+  }
+  
+  
+  /* .agroSellerSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 600px;
+  }
+  
+  .agroSellerContent {
+    margin-bottom: 20px;
+  }
+  
+  .agroSellerContent h2 {
+    color: #4CAF50;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .agroSellerContent p {
+    color: #333;
+    font-size: 16px;
+  }
+  
+  .buttonContainer {
+    margin-top: 20px;
+  }
+  
+  .btn {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    padding: 12px 40px;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .btnGreen {
+    background-color: #45a049;
+  }
+  
+  .btn:hover {
+    background-color: #45a049;
+  }
+   */
