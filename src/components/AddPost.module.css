@@ -1,0 +1,126 @@
+.container {
+  max-width: 800px;
+  background-color: #f7f7f7;
+  padding: 30px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto; /* Center the container */
+}
+
+.container h1 {
+  color: #5a8a34;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.form-label {
+  color: #4c4c4c;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.form-control {
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+  box-shadow: none;
+  padding: 10px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  width: calc(100% - 22px); /* Adjust the width to accommodate for padding and border */
+}
+
+.form-control:focus {
+  border-color: #5a8a34;
+  box-shadow: 0 0 0 0.2rem rgba(90, 138, 52, 0.25);
+}
+
+.btn {
+  background-color: #5a8a34;
+  border-color: #5a8a34;
+  color: white;
+  font-weight: bold;
+  width: 100%;
+  cursor: pointer;
+  padding: 10px;
+  margin-top: 20px;
+  font-size: 1rem;
+}
+
+.btn:hover {
+  background-color: #88d64d;
+  border-color: #88d64d;
+}
+
+.signupbtn {
+  background-color: #5a8a34;
+  border-color: #5a8a34;
+  color: white;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.signupbtn:hover {
+  background-color: #88d64d;
+  border-color: #88d64d;
+}
+
+input[type="file"].form-control {
+  height: auto;
+  padding: 3px;
+}
+
+/* Styling for video previews */
+.video-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.video-preview img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+}
+
+select.form-control {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .form-control {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+
+  .signupbtn {
+    font-size: 0.9rem;
+    padding: 10px 15px;
+  }
+}
