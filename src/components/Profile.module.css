@@ -1,0 +1,63 @@
+.profileContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f9; /* Light background color for the entire section */
+}
+
+.profileForm {
+  background-color: #fff; /* White background for the form container */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px; /* Width of the form container */
+  text-align: center; /* Center align the text inside the form */
+}
+
+.profileIcon {
+  font-size: 100px; /* Large icon size */
+  color: #4caf50; /* Green color for the icon */
+  margin-bottom: 20px;
+}
+
+.profileDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Space between each profile detail */
+}
+
+.profileItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profileLabel {
+  font-weight: bold; /* Bold font for the label */
+  color: #555; /* Darker color for the label */
+}
+
+.profileData {
+  font-weight: normal; /* Regular font weight for the data */
+  color: #333; /* Dark color for the data */
+}
+
+.profileName, 
+.profileEmail,
+.profileMobileNumber,
+.profileProfession,
+.profileAddress {
+  font-size: 1.2em; /* Slightly larger font size for details */
+  margin: 5px 0; /* Margin around each detail for spacing */
+}
+
+.profileName .profileLabel {
+  font-weight: bold; /* Extra bold font for the name label */
+}
+
+.profileForm:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
