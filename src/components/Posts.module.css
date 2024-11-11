@@ -1,0 +1,47 @@
+.container {
+    margin-top: 20px;
+  }
+  
+  .modalContent {
+    border-radius: 10px;
+  }
+  
+  .modalTitle {
+    color: #4a7c44;
+  }
+  
+  .formLabel {
+    color: #4a7c44;
+  }
+  
+  .formControl {
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+  }
+  
+  .btnPrimary {
+    background-color: #4a7c44;
+    border-color: #4a7c44;
+  }
+  
+  .btnPrimary:hover {
+    background-color: #5be945;
+    border-color: #3fff21;
+  }
+  
+  .btnSecondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+  }
+  
+  .btnSecondary:hover {
+    background-color: #5a6268;
+    border-color: #5a6268;
+  }
+  
+  @media (max-width: 576px) {
+    .modalDialog {
+      max-width: 90%;
+    }
+  }
+  
