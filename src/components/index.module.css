@@ -1,0 +1,126 @@
+.bg {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+    overflow: hidden; /* Prevents overflow */
+}
+
+.headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.signupContainer {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    top: 10px;
+    right: 20px; /* Positioned to the right */
+}
+
+.signupContainer img, .loginContainer img {
+    width: 50px;
+}
+
+#animatedText {
+    font-size: 2rem; /* Adjust font size */
+    font-family: "Arial", sans-serif; /* Change font family */
+    font-weight: bold; /* Set font weight */
+    text-transform: uppercase; /* Transform text to uppercase */
+    letter-spacing: 2px; /* Adjust letter spacing */
+    color: #fff;
+    white-space: nowrap;
+    margin: 0;
+    overflow: hidden;
+    animation: text-glow 10s linear infinite; /* Adjust animation duration */
+}
+
+.carouselContainer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%; /* Adjust the height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+@media (min-width: 768px) {
+    .signupContainer img, .loginContainer img {
+        width: 70px;
+    }
+
+    #animatedText {
+        font-size: 2.5rem;
+    }
+}
+
+.textContainer {  /* Changed from text-container to textContainer */
+    position: absolute;
+    top: 3%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    opacity: 0;
+    animation: appear-text 1s ease-in forwards;
+}
+/* Keyframes for the animations */
+@keyframes appear-text {
+    from {
+        opacity: 0;
+        transform: translateX(-50%); /* Start position */
+    }
+  
+    to {
+        opacity: 1;
+        transform: translateX(0); /* End position (center) */
+    }
+}
+
+/* @keyframes text-glow {
+    0%, 100% {
+        text-shadow: 0 0 5px #8B4513, 0 0 10px #8B4513, 0 0 15px #8B4513, 0 0 20px #32CD32, 0 0 30px #32CD32, 0 0 40px #32CD32, 0 0 55px #32CD32, 0 0 75px #32CD32;
+    }
+    50% {
+        text-shadow: 0 0 5px #006400, 0 0 10px #006400, 0 0 15px #006400, 0 0 20px #32CD32, 0 0 30px #32CD32, 0 0 40px #32CD32, 0 0 55px #32CD32, 0 0 75px #32CD32;
+    }
+} */
+@keyframes text-glow {
+    0% {
+        color: #fff; /* Start color: red */
+    }
+    25% {
+        color: #00ff00; /* Mid color: green */
+    }
+    50% {
+        color: #0000ff; /* Mid color: blue */
+    }
+    75% {
+        color: #ffff00; /* Mid color: yellow */
+    }
+    100% {
+        color: #0d7f25; /* End color: magenta */
+    }
+}
+/* @keyframes text-glow {
+    0%, 100% {
+        color: #fff; 
+        text-shadow: none; 
+    50% {
+        color: #ffcc00; 
+} */
