@@ -1,0 +1,30 @@
+import React,{useContext,useEffect} from 'react'
+import postContext from '../context/posts/postContext';
+import Postitem from "./Postitem"
+import Navbar from './Navbar'
+import Categories from './Categories'
+const Sweets = () => {
+  const context=useContext(postContext);
+  const {posts,sweetsposts}=context;
+  useEffect(() => {
+    sweetsposts(); 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); 
+  return (
+    <>
+    <Navbar/>
+    <Categories/>
+    <div div className="row my-3 mx-2">
+    <h2>Sweets</h2>
+    <div className="container">
+        {posts?.length === 0 && 'No products to display'}
+    </div>
+        {posts && posts.map((post) => {
+        return <Postitem key={post._id} post={post} />
+    })}
+    </div>
+    </>
+  )
+}
+
+export default Sweets
