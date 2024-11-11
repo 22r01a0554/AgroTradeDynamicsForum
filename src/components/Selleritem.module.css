@@ -1,0 +1,115 @@
+.card {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.3s ease;
+    width: 490px; /* Set a fixed width */
+    margin: auto; /* Center the card */
+}
+.card-img-top {
+    width: 100%;
+    height: 150px; /* Fixed height for the image */
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.card-body {
+    background-color: #fff;
+    border-radius: 0 0 10px 10px;
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Keep the rest of your CSS the same */
+
+.profileDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between each profile detail */
+  }
+  .profileItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .profileLabel {
+    font-weight: bold; /* Bold font for the label */
+    color: #555; /* Darker color for the label */
+  }
+.card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.card video {
+    width: 100%; /* Set the video width to 100% of its container */
+    height: 200px; /* Set a fixed height for all videos */
+    object-fit: cover; /* Ensure the video covers the entire container */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    color: #4a7c44;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    color: #4a4a4a;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.card .btn {
+    background-color: #3b6537;
+    border-color: #4a7c44;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 15px 60px;
+    font-size: 0.9rem;
+    text-align: center;
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Align correctly */
+    border-radius: 30px; /* Rounded corners */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Add a shadow for depth */
+    transition: background-color 0.3s, border-color 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+.card .btn:hover {
+    background-color: #46ca31;
+    border-color: #51e13b;
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Button focus styles */
+.card .btn:focus{
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 10px rgba(70, 202, 49, 0.5); /* Add focus shadow */
+}
+.faPen, .faTrash {
+    
+    cursor: pointer;
+    transition: color 0.3s ease;
+    font-size: 1.5em;
+}
+
+.faPen:hover, .faTrash:hover {
+    color: #63f84c;
+}
+
+.card .fa-pen-to-square:hover, .card .fa-trash:hover {
+    color: #3e6538;
+}
+
+.d-flex {
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
