@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from "react";
 import Navbar from "./components/Navbar";
 import Alert from "./components/Alert";
-import About from './components/About';
+import About from './components/AboutUs';
 import Index from "./components/index";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
