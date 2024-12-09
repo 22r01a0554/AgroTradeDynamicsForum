@@ -1,0 +1,118 @@
+/* .bg {
+  margin: 0;
+  padding: 0;
+  width:1600px;
+  height:730px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.text-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 0;
+  animation: appear-text 1s ease-in forwards;
+}
+
+#animated-text {
+  top: 10px;
+  font-size: 48px;
+  font-weight: bold;
+  color: #fff;
+  white-space: nowrap;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  animation: text-glow 0.8s ease-in-out infinite;
+}
+
+@keyframes appear-text {
+  from {
+      opacity: 0;
+      transform: translateY(-50%);
+      top: 50px;
+  }
+
+  to {
+      opacity: 1;
+      transform: translateY(50);
+      top: 50px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6, p, ul {
+  margin: 0;
+  padding: 0;
+}
+
+.signup-container img {
+  width: 85px;
+  position: relative;
+  top: 10px;
+  left: 1400px;
+  z-index: 9999;
+  margin-right: 30px;
+  
+} */
+
+/* .image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.image {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.image:first-child {
+  opacity: 1;
+}
+
+.image-wrapper img {
+  height: 200px;
+  width: auto;
+}
+
+.carousel-nav {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 400px;
+  
+}
+
+.image-wrapper:hover {
+  transform: translateY(-10px);
+}
+
+.image-wrapper.active {
+  transform: translateY(10px);
+}
+
+.image-wrapper {
+  display: inline-block;
+  width: 45%;
+  margin: 10px 1%;
+  vertical-align: top;
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+} */
