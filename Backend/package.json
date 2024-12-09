@@ -1,0 +1,31 @@
+{
+  "name": "farmbackend",
+  "version": "1.0.0",
+  "description": "your backend on the cloud",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ffmpeg/ffmpeg": "^0.12.10",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "crypto-browserify": "^3.12.0",
+    "express": "^4.19.2",
+    "express-validator": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.4.0",
+    "multer": "^1.4.5-lts.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "resolutions": {
+    "buffer": "^6.0.3",
+    "util": "^0.12.4",
+    "crypto": "^1.0.1"
+  },
+  "keywords": []
+}
