@@ -51,6 +51,8 @@ const SellerSchema = new Schema({
     },
     filename: String,
     size: Number,
+  },{
+    timestamp: true,
   });
 const Seller=mongoose.model('seller',SellerSchema);
 module.exports=Seller;

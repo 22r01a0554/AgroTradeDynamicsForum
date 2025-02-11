@@ -30,6 +30,8 @@ const UserSchema = new Schema({
         type:Date,
         default:Date.now
     },
+  },{
+    timestamp: true,
   });
 const User=mongoose.model('user',UserSchema);
 module.exports=User;

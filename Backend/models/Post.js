@@ -57,6 +57,8 @@ const PostSchema = new Schema({
     },
     filename: String,
     size: Number,
+  },{
+    timestamp: true,
   });
 const Post=mongoose.model('post',PostSchema);
 module.exports=Post;

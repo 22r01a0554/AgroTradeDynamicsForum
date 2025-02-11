@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
-
 const videoSchema = new Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
@@ -64,7 +63,9 @@ const videoSchema = new Schema({
     affiliation: {
         type: String
     }
-});
+},{
+    timestamp: true,
+  });
 
 const Video = mongoose.model('Video', videoSchema);
 module.exports = Video;
