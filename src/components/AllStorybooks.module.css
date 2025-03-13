@@ -1,0 +1,90 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.storybookGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Adjusted for better spacing */
+  gap: 1.5rem;
+}
+
+.storybookCard {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  padding: 1rem;
+}
+
+.storybookCard:hover {
+  transform: scale(1.05);
+}
+
+.storyDetails {
+  padding: 1rem;
+}
+
+.storyDetails h3 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.storyDetails p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.authorContainer {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-top: 1px solid #ddd;
+}
+
+.authorPhoto {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 2px solid #ddd;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  margin-top: 0.5rem;
+}
+
+.storybookButton {
+  background: #60b045;
+  color: white;
+  padding: 6px 14px; /* Reduced height, increased width */
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  width: 32%; /* Adjusted button width for even spacing */
+  text-align: center;
+  transition: background 0.3s ease-in-out;
+}
+
+.storybookButton:hover {
+  background: #2563eb;
+}
+
+.loadingText {
+  font-size: 1.2rem;
+  color: #555;
+  text-align: center;
+}

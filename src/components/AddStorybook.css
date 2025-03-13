@@ -1,0 +1,101 @@
+/* Upload Container */
+.upload-container {
+    max-width: 600px;
+    background-color: #fffaf0; /* Soft, warm background */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+  }
+  
+  /* Heading */
+  .upload-container h2 {
+    color: #5a8a34;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Arial', sans-serif;
+  }
+  
+  /* Upload Form */
+  .upload-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* Input Fields */
+  .upload-form input,
+  .upload-form textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .upload-form input:focus,
+  .upload-form textarea:focus {
+    border-color: #6a994e;
+    box-shadow: 0 0 5px rgba(106, 153, 78, 0.5);
+    outline: none;
+  }
+  
+  /* Labels */
+  .upload-form label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #3a3a3a;
+    text-align: left;
+  }
+  
+  /* File Inputs */
+  .upload-form input[type="file"] {
+    border: none;
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  /* Upload Button */
+  .upload-form button {
+    background-color: #5a8a34;
+    border-color: #5a8a34; /* Playful orange */
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .upload-form button:hover {
+    background-color: #ff8847;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .upload-container {
+      padding: 20px;
+    }
+  
+    .upload-container h2 {
+      font-size: 1.8rem;
+    }
+  
+    .upload-form input,
+    .upload-form textarea {
+      font-size: 0.9rem;
+    }
+  
+    .upload-form button {
+      font-size: 1rem;
+      padding: 10px;
+    }
+  }
+  

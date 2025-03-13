@@ -53,6 +53,14 @@ const Home = () => {
     e.preventDefault();
     navigate("/addvideo")
   }
+  const uploadStoryBooksClick=(e)=>{
+    e.preventDefault();
+    navigate("/uploadStoryBook")
+  }
+  const allStoryBooksClick=(e)=>{
+    e.preventDefault();
+    navigate("/allStoryBooks")
+  }
   const Images = [
     "/img/CF1.jpeg",
     "/img/home3.jpeg",
@@ -85,14 +93,16 @@ const Home = () => {
     <button type="button"  className="btn btn-outline-primary" style={{ marginRight: '20px',height:'80px',width:'200px' }} onClick={buyClick}><i className="fa-solid fa-cart-shopping" ></i>Buy</button>
     <button type="button" className="btn btn-outline-secondary" style={{marginRight: '20px',height:'80px',width:'200px' }} onClick={postClick}><i className="fa-solid fa-shop" ></i>Post Item</button>
     <button type="button" className="btn btn-outline-success" style={{ marginRight: '20px',height:'80px',width:'200px' }} onClick={airentalsClick}><i className="fa-solid fa-truck-moving"></i>AI Rentals</button>
-    <button type="button" className="btn btn-outline-danger" style={{ marginRight: '20px',height:'80px',width:'200px' }} onClick={categoriesClick}><i className="fa-solid fa-layer-group"></i>Categories</button>
+    {/* <button type="button" className="btn btn-outline-danger" style={{ marginRight: '20px',height:'80px',width:'200px' }} onClick={categoriesClick}><i className="fa-solid fa-layer-group"></i>Categories</button> */}
     <button type="button" className="btn btn-outline-warning" style={{marginRight: '20px',height:'80px',width:'200px' }} onClick={villagegoodsClick}><i className="fa-solid fa-message"></i>VillageGoods</button>
     <button type="button" className="btn btn-outline-info" style={{ marginRight: '20px',height:'80px',width:'200px' }} onClick={agriculturetoolsClick}><i className="fa-solid fa-truck-moving"></i>AgricultureProducts And Tools</button>
     <button type="button" className="btn btn-outline-dark" style={{ marginRight: '20px',height:'80px',width:'200px' }} onClick={agriProductClick}><i className="fa-solid fa-user"></i>Agri Product Sellers</button>
+    <button type="button" className="btn btn-outline-danger" style={{ marginRight: '20px',height:'80px',width:'200px' ,marginTop:'20px'}} onClick={productsClick}><i className="fa-solid fa-layer-group"></i>Your Products</button>
     <button type="button" className="btn btn-outline-dark" style={{ marginRight: '20px',height:'80px',width:'200px' ,marginTop:'20px'}} onClick={communityClick}><i className="fa-solid fa-people-group"></i>Community Groups</button>
-    <button type="button" className="btn btn-outline-dark" style={{ marginRight: '20px',height:'80px',width:'200px' ,marginTop:'20px'}} onClick={productsClick}><i className="fa-solid fa-people-group"></i>Your Products</button>
-    <button type="button" className="btn btn-outline-dark" style={{ marginRight: '20px',height:'80px',width:'200px' ,marginTop:'20px'}} onClick={videosClick}><i className="fa-solid fa-people-group"></i>Your Videos</button>
-    <button type="button" className="btn btn-outline-dark" style={{ marginRight: '20px',height:'80px',width:'200px' ,marginTop:'20px'}} onClick={uploadClick}><i className="fa-solid fa-people-group"></i> Upload Videos</button>
+    <button type="button" className="btn btn-outline-dark" style={{ marginRight: '20px',height:'80px',width:'200px' ,marginTop:'20px'}} onClick={videosClick}><i class="fa-solid fa-play"></i>Your Videos</button>
+    <button type="button" className="btn btn-outline-dark" style={{ marginRight: '20px',height:'80px',width:'200px' ,marginTop:'20px'}} onClick={uploadClick}><i class="fa-solid fa-video"></i> Upload Videos</button>
+    <button type="button" className="btn btn-outline-dark" style={{ marginRight: '20px',height:'80px',width:'200px' ,marginTop:'20px'}} onClick={uploadStoryBooksClick}><i class="fa-solid fa-address-book"></i>Upload StoryBooks</button>
+    <button type="button" className="btn btn-outline-dark" style={{ marginRight: '20px',height:'80px',width:'200px' ,marginTop:'20px'}} onClick={allStoryBooksClick}><i class="fa-solid fa-book-open"></i>Your StoryBooks</button>
     </div>
     <div className={styles.section}>
         <p className={styles.sectionText}>Top Picks For You</p>
