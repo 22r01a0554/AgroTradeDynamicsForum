@@ -18,8 +18,10 @@ export default function Index() {
         <div className={styles.bg} style={{ backgroundImage: `url('/img/bgimage1.jpg')` }}>
             <header className={styles.headerContainer}>
                 <div className={styles.signupContainer}>
-                    <Link to="/signup"><img src="/img/sign-up.png" alt="signup"/></Link>
-                    <Link to="/login"><img src="/img/login.svg" alt="login"/></Link>
+                    <Link to="/signup">
+                    {/* <img src="/img/sign-up.png" alt="signup"/></Link> */}
+                    <img src="/img/enroll.png" alt="signup"/></Link>
+                    <Link to="/login"><img src="/img/login1.png" alt="login"/></Link>
                 </div>
             </header>
             <div className={styles.textContainer}>
