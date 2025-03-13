@@ -8,11 +8,11 @@ const achievements = [
   },
   {
     text: 'She is dedicated to promoting sustainable farming practices.',
-    image: '/img/Team/n2.jpg',
+    image: '/img/Team/la.jpg',
   },
   {
     text: 'Founder of AgroTradeDynamicsForum, a platform for agricultural innovation.',
-    image: '/img/Team/sa.jpg',
+    image: '/img/Team/la.jpg',
   },
   {
     text: 'Passionate about empowering farmers with AI-driven tools and technologies.',
@@ -20,15 +20,15 @@ const achievements = [
   },
   {
     text: 'Lavanya believes in the power of community collaboration for agricultural growth.',
-    image: '/img/Team/n2.jpg',
+    image: '/img/Team/la.jpg',
   },
   {
     text: 'Advocating for government policies that support sustainable farming practices.',
-    image: '/img/Team/sa.jpg',
+    image: '/img/Team/la.jpg',
   },
   {
     text: 'Regularly involved in farm-to-table initiatives, promoting organic farming.',
-    image: '/img/Team/n2.jpg',
+    image: '/img/Team/la.jpg',
   },
 ];
 
