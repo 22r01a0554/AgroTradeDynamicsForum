@@ -45,6 +45,8 @@ import VideoState  from './context/videos/VideoState'
 import AllVideos from './components/AllVideos';
 import IndexCarousal from './components/IndexCarousal';
 import AuthorDetails from './components/AuthorDetails';
+import AddStorybook from './components/AddStoryBook';
+import AllStoryBooks from "./components/AllStoryBooks";
 function App() {
   const [alert, setAlert] = useState(null)
   const showAlert=(message,type)=>{
@@ -105,6 +107,8 @@ function App() {
         <Route exact path="/videos" element={<Videos/>} />
         <Route exact path="/author/:id" element={<AuthorDetails/>}/>
         <Route exact path="/allVideos" element={<AllVideos/>} />
+        <Route exact path="/uploadStoryBook" element={<AddStorybook/>} />
+        <Route exact path="/allStoryBooks" element={<AllStoryBooks />} />
         </Routes>
       </Router>
     </PostState>
