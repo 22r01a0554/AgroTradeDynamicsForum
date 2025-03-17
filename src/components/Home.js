@@ -8,7 +8,6 @@ const Home = () => {
   let navigate=useNavigate();
   const buyClick =  (e) => {
     e.preventDefault();
-    // navigate("/buy"); 
     navigate("/buycategories")
     console.log("BuyClicked");
   };
@@ -73,15 +72,15 @@ const Home = () => {
     "/img/a5.png"
   ];
   const bumperBountyImages = [
-    "/img/CF1.jpeg",
-    "/img/home3.jpeg",
-    "/img/a5.png",
-    "/img/r(1).jpg",
-    "/img/r(2).jpg",
-    "/img/home1.jpg",
-    "/img/CF1.jpeg",
-    "/img/home3.jpeg",
-    "/img/a5.png"
+    "/img/images/Bumper Bounty/FruitsBox.jpg",
+    "/img/images/Bumper Bounty/CarrotBox.jpg",
+    "/img/images/Bumper Bounty/cofee powder.jpg",
+    "/img/images/Bumper Bounty/VegetablesBox.jpg",
+    "img/images/Bumper Bounty/moong dal.jpg",
+    "/img/images/Bumper Bounty/ragi.jpg",
+    "/img/images/Bumper Bounty/DietPack.jpg",
+    "/img/images/Bumper Bounty/yellow jawar.avif",
+    "/img/images/Bumper Bounty/maize.avif"
   ];
   return (
     <>
@@ -95,14 +94,43 @@ const Home = () => {
     <button type="button" className="btn btn-outline-success" style={{ marginRight: '20px',height:'80px',width:'200px' }} onClick={airentalsClick}><i className="fa-solid fa-truck-moving"></i>AI Rentals</button>
     {/* <button type="button" className="btn btn-outline-danger" style={{ marginRight: '20px',height:'80px',width:'200px' }} onClick={categoriesClick}><i className="fa-solid fa-layer-group"></i>Categories</button> */}
     <button type="button" className="btn btn-outline-warning" style={{marginRight: '20px',height:'80px',width:'200px' }} onClick={villagegoodsClick}><i className="fa-solid fa-message"></i>VillageGoods</button>
-    <button type="button" className="btn btn-outline-info" style={{ marginRight: '20px',height:'80px',width:'200px' }} onClick={agriculturetoolsClick}><i className="fa-solid fa-truck-moving"></i>AgricultureProducts And Tools</button>
+    <button type="button" className="btn btn-outline-success" style={{ marginRight: '20px',height:'80px',width:'200px' }} onClick={agriculturetoolsClick}><i className="fa-solid fa-truck-moving"></i>AgricultureProducts And Tools</button>
+    
     <button type="button" className="btn btn-outline-dark" style={{ marginRight: '20px',height:'80px',width:'200px' }} onClick={agriProductClick}><i className="fa-solid fa-user"></i>Agri Product Sellers</button>
     <button type="button" className="btn btn-outline-danger" style={{ marginRight: '20px',height:'80px',width:'200px' ,marginTop:'20px'}} onClick={productsClick}><i className="fa-solid fa-layer-group"></i>Your Products</button>
-    <button type="button" className="btn btn-outline-dark" style={{ marginRight: '20px',height:'80px',width:'200px' ,marginTop:'20px'}} onClick={communityClick}><i className="fa-solid fa-people-group"></i>Community Groups</button>
-    <button type="button" className="btn btn-outline-dark" style={{ marginRight: '20px',height:'80px',width:'200px' ,marginTop:'20px'}} onClick={videosClick}><i class="fa-solid fa-play"></i>Your Videos</button>
-    <button type="button" className="btn btn-outline-dark" style={{ marginRight: '20px',height:'80px',width:'200px' ,marginTop:'20px'}} onClick={uploadClick}><i class="fa-solid fa-video"></i> Upload Videos</button>
+    <button type="button" className="btn btn-outline-info" style={{ marginRight: '20px',height:'80px',width:'200px' ,marginTop:'20px'}} onClick={communityClick}><i className="fa-solid fa-people-group"></i>Community Groups</button>
+    <button type="button" className="btn"   style={{ 
+    marginRight: '20px', height: '80px', width: '200px', marginTop: '20px', 
+    color: '#228B22', border: '1px solid #228B22', transition: '0.3s' 
+  }} onClick={videosClick}
+  onMouseOver={(e) => { e.target.style.backgroundColor = '#228B22'; e.target.style.color = 'white'; }}
+  onMouseOut={(e) => { e.target.style.backgroundColor = 'transparent'; e.target.style.color = '#228B22'; }}
+><i className="fas fa-seedling mr-2"></i> Your Videos
+</button>
+    {/* <button type="button" className="btn btn-outline-dark" style={{ marginRight: '20px',height:'80px',width:'200px' ,marginTop:'20px'}} onClick={videosClick}><i class="fa-solid fa-play"></i>Your Videos</button> */}
+    <button type="button" className="btn" 
+  style={{ 
+    marginRight: '20px', height: '80px', width: '200px', marginTop: '20px', 
+    color: '#FF8C00', border: '1px solid #FF8C00', transition: '0.3s' 
+  }} 
+  onClick={uploadClick}
+  onMouseOver={(e) => { e.target.style.backgroundColor = '#FF8C00'; e.target.style.color = 'white'; }}
+  onMouseOut={(e) => { e.target.style.backgroundColor = 'transparent'; e.target.style.color = '#FF8C00'; }}
+><i className="fa-solid fa-video"></i> Upload Videos
+</button>
+    {/* <button type="button" className="btn btn-outline-dark" style={{ marginRight: '20px',height:'80px',width:'200px' ,marginTop:'20px'}} onClick={uploadClick}><i class="fa-solid fa-video"></i> Upload Videos</button> */}
     <button type="button" className="btn btn-outline-dark" style={{ marginRight: '20px',height:'80px',width:'200px' ,marginTop:'20px'}} onClick={uploadStoryBooksClick}><i class="fa-solid fa-address-book"></i>Upload StoryBooks</button>
-    <button type="button" className="btn btn-outline-dark" style={{ marginRight: '20px',height:'80px',width:'200px' ,marginTop:'20px'}} onClick={allStoryBooksClick}><i class="fa-solid fa-book-open"></i>Your StoryBooks</button>
+    {/* <button type="button" 
+  className="btn" 
+  style={{ 
+    marginRight: '20px', height: '80px', width: '200px', marginTop: '20px', 
+    color: '#D81B60', border: '1px solid #D81B60', transition: '0.3s' 
+  }} onClick={allStoryBooksClick}
+  onMouseOver={(e) => { e.target.style.backgroundColor = '#D81B60'; e.target.style.color = 'white'; }}
+  onMouseOut={(e) => { e.target.style.backgroundColor = 'transparent'; e.target.style.color = '#D81B60'; }}
+><i className="fas fa-candy-cane mr-2"></i> Your StoryBooks
+</button> */}
+    {/* <button type="button" className="btn btn-outline-dark" style={{ marginRight: '20px',height:'80px',width:'200px' ,marginTop:'20px'}} onClick={allStoryBooksClick}><i class="fa-solid fa-book-open"></i>Your StoryBooks</button> */}
     </div>
     <div className={styles.section}>
         <p className={styles.sectionText}>Top Picks For You</p>
